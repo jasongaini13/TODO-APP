@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+  <h1>TODO LIST</h1>
+          <form action="/add" method="post">
+            <div>
+                <label>Enter the task</label>
+                <input type="text" name="name" >
+                <button type="submit" >Add task</button>
+              </div>
+          </form> <br> <br>
+          <table>
+            <tbody>
+                {%for todo in tasks_list%}
+                <tr>
+                    <td class="thick">⚫</td>
+                    <td class="thick">{{todo.name}}</td>
+                    {%if todo.done==False%}
+                    <td> <label class="label pending">Not done </label></td>
+                    {%else%}
+                    <td> <label class="label done"></label>done </label></td>
+                    {%endif %}
+                    <td ><a href="/update/{{todo.task_id}}"  class="button2">update</a></td>
+                    <td ><a href="/delete/{{todo.task_id}}" class="button3">delete</a></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+          </table>
+</body>
+</html>

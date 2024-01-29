@@ -4,7 +4,7 @@ This is a simple todo application using flask.To run this follow the steps:
 
 2.activate the virtual environment : (.venv\scripts\activate)
 
-3.Install the packages flask,MYSQldb,SQLAlchemy (python -m pip install flask,MYSQldb,SQLAlchemy)
+3.Install the packages flask,MySQLdb,SQLAlchemy (python -m pip install flask,MySQLdb,SQLAlchemy)
 
 
 OUTPUT
